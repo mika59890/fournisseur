@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8" />
         <title>Inscription fournisseur</title>
-        <link type="text/css" rel="stylesheet" href="<c:url value="css/style.css"/>" />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
     </head>
     <body>
     	<c:import url="inc/header.jsp"/>
-        <form method="post" action="inscription">
+        <form method="post" action="enregistrementFournisseur">
             <fieldset>
                 <legend>Nouveau fournisseur </legend>
                 
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" value="" size="20" required/>
+                <label for="enseigne">Enseigne</label>
+                <input type="text" id="enseigne" name="enseigne" value="" size="20" required/>
                 <br />
                 <label for="adresse">Adresse</label>
                 <input type="text" id="adresse" name="adresse" value="" size="20" required/>
@@ -29,7 +29,10 @@
                 <label for="email">Adresse email</label>
                 <input type="text" id="email" name="email" value="" size="20" required/>
                 <br />
-                <input type="submit" value="Inscription" class="sansLabel" />
+                <label for="siret">Siret</label>
+                <input type="number" id="siret" name="siret" value="" size="20" required/>
+                <br />
+                <input type="submit" value="enregistrementFournisseur" class="sansLabel" />
                 <br />
             </fieldset>
         </form>
