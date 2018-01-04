@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Accueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String VUE = "/WEB-INF/accueil.jsp";
+	
 
     /**
      * Default constructor. 
@@ -24,6 +25,7 @@ public class Accueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
 	}
 
@@ -32,6 +34,7 @@ public class Accueil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
 	}
 
 }

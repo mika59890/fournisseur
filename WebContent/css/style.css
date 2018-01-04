@@ -2,6 +2,10 @@
 body, p, legend, label, input {
     font: normal 8pt verdana, helvetica, sans-serif;
 }
+body{
+	margin-left: 10em;
+	margin-right: 10em;
+}
 /*FORMULAIRES*/
 fieldset {
     padding: 10px;

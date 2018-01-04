@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Inscription fournisseur</title>
-        <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <link type="text/css" rel="stylesheet" href="<c:url value="css/style.css"/>" />
     </head>
     <body>
     	<c:import url="inc/header.jsp"/>
