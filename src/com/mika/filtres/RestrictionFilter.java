@@ -28,7 +28,14 @@ public class RestrictionFilter implements Filter {
 
         /* Récupération de la session depuis la requête */
         HttpSession session = request.getSession();
-
+        
+        /* Non-filtrage du dossier css */
+        String chemin = request.getRequestURI().substring( request.getContextPath().length() );
+        if ( chemin.startsWith( "/css" ) ) {
+            chain.doFilter( request, response );
+            return;
+        }
+        
         /**
          * Si l'objet utilisateur n'existe pas dans la session en cours, alors
          * l'utilisateur n'est pas connecté.

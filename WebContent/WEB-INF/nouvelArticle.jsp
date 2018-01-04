@@ -7,7 +7,7 @@
     </head>
     <body>
     	<c:import url="inc/header.jsp"/>
-        <form method="post" action="enregistrementArticle">
+        <form method="post" action="enregistrementArticle" enctype="multipart/form-data">
             <fieldset>
                 <legend>Nouvel article </legend>
                 
@@ -47,6 +47,9 @@
                 <br />
                 <label for="diametre">Diamètre</label>
                 <input type="number" id="diametre" name="diametre" value="" size="20"/>
+                <br />
+                <label for="fichier">Image</label>
+                <input type="file" id="fichier" name="fichier" />
                 <br />
                 <input type="submit" value="Valider" class="sansLabel" />
                 <br />
