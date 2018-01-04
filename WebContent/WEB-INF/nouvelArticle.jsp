@@ -29,6 +29,12 @@
                 <label for="couleur">Couleur</label>
                 <input type="text" id="couleur" name="couleur" value="" size="20"/>
                 <br />
+                <label for="lot">Vendu par</label>
+                <input type="text" id="lot" name="lot" value="" size="20" required/>
+                <br />
+                <label for="prix">Prix HT</label>
+                <input type="text" id="prix" name="prix" value="" size="20" required/>
+                <br />
                 <p>Dimensions (en mm) :</p>
                 <label for="hauteur">Hauteur</label>
                 <input type="text" id="hauteur" name="hauteur" value="" size="20"/>

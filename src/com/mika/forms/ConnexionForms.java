@@ -9,7 +9,7 @@ import com.mika.beans.Utilisateur;
 
 public class ConnexionForms {
 	private static final String CHAMP_EMAIL  = "email";
-    private static final String CHAMP_PASS   = "motdepasse";
+    private static final String CHAMP_PASS   = "password";
 
     private String              resultat;
     private Map<String, String> erreurs      = new HashMap<String, String>();
@@ -67,9 +67,9 @@ public class ConnexionForms {
     /**
      * Valide le mot de passe saisi.
      */
-    private void validationMotDePasse( String motDePasse ) throws Exception {
-        if ( motDePasse != null ) {
-            if ( motDePasse.length() < 3 ) {
+    private void validationMotDePasse( String password ) throws Exception {
+        if ( password != null ) {
+            if ( password.length() < 3 ) {
                 throw new Exception( "Le mot de passe doit contenir au moins 3 caractères." );
             }
         } else {
