@@ -28,6 +28,13 @@
   <servlet>
     <servlet-name>NouvelArticle</servlet-name>
     <servlet-class>com.mika.servlets.NouvelArticle</servlet-class>
+    <init-param>
+		<param-name>chemin</param-name> 
+		<param-value>/fichiers/</param-value> 
+	</init-param>
+    <multipart-config>
+		<location>c:/fichiers</location>
+	</multipart-config>
   </servlet>
   <servlet-mapping>
     <servlet-name>NouvelArticle</servlet-name>
