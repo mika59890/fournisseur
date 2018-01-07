@@ -7,7 +7,7 @@
     </head>
     <body>
     	<c:import url="inc/header.jsp"/>
-        <form method="post" action="nouvelUtilisteur">
+        <form method="post" action="NouvelUtilisateur">
             <fieldset>
                 <legend>Ajout utilisateur</legend>
 

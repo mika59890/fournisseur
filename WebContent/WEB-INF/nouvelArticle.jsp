@@ -12,48 +12,45 @@
                 <legend>Nouvel article </legend>
                 
                 <label for="designation">Désignation</label>
-                <input type="text" id="designation" name="designation" value="" size="20" required/>
+                <input type="text" id="designation" name="designation" value="<c:out value="${article.designation}"/>" size="20" required/>
                 <br />
                 <label for="fournisseur">Fournisseur</label>
-                <input type="text" id="fournisseur" name="fournisseur" value="" size="20" required/>
+                <input type="text" id="fournisseur" name="fournisseur" value="<c:out value="${article.fournisseur}"/>" size="20" required/>
                 <br />
                 <label for="referenceFournisseur">Référence fournisseur</label>
-                <input type="text" id="referenceFournisseur" name="referenceFournisseur" value="" size="20" required/>
+                <input type="text" id="referenceFournisseur" name="referenceFournisseur" value="<c:out value="${article.referenceFournisseur}"/>" size="20" required/>
                 <br />
 				<label for="referenceInterne">Référence interne</label>
-                <input type="text" id="referenceInterne" name="referenceInterne" value="" size="20" required/>
+                <input type="text" id="referenceInterne" name="referenceInterne" value="<c:out value="${article.referenceInterne}"/>" size="20" required/>
                 <br />
                 <label for="matiere">Matière</label>
-                <input type="text" id="matiere" name="matiere" value="" size="20"/>
+                <input type="text" id="matiere" name="matiere" value="<c:out value="${article.matiere}"/>" size="20"/>
                 <br />
                 <label for="couleur">Couleur</label>
-                <input type="text" id="couleur" name="couleur" value="" size="20"/>
+                <input type="text" id="couleur" name="couleur" value="<c:out value="${article.matiere}"/>" size="20"/>
                 <br />
-                <label for="lot">Vendu par</label>
-                <input type="text" id="lot" name="lot" value="" size="20" required/>
+                <label for="lot">Vendu par lot de </label>
+                <input type="text" id="lot" name="lot" value="<c:out value="${article.lot}"/>" size="20" required/>
                 <br />
-                <label for="prix">Prix HT</label>
-                <input type="text" id="prix" name="prix" value="" size="20" required/>
+                <label for="prixHT">Prix HT</label>
+                <input type="text" id="prix" name="prixHT" value="<c:out value="${article.prixHT}"/>" size="20" required/>
                 <br />
                 <p>Dimensions (en mm) :</p>
                 <label for="hauteur">Hauteur</label>
-                <input type="text" id="hauteur" name="hauteur" value="" size="20"/>
+                <input type="text" id="hauteur" name="hauteur" value="<c:out value="${article.hauteur}"/>" size="20"/>
                 <br />
                 <label for="largeur">Largeur</label>
-                <input type="text" id="largeur" name="largeur" value="" size="20"/>
+                <input type="text" id="largeur" name="largeur" value="<c:out value="${article.largeur}"/>" size="20"/>
                 <br />
                 <label for="longueur">Longueur</label>
-                <input type="number" id="longueur" name="longueur" value="" size="20"/>
+                <input type="number" id="longueur" name="longueur" value="<c:out value="${article.longueur}"/>" size="20"/>
                 <br />
                 <label for="diametre">Diamètre</label>
-                <input type="number" id="diametre" name="diametre" value="" size="20"/>
-                <br />
-                <label for="fichier">Image</label>
-                <input type="file" id="fichier" name="fichier" value="<c:out value="${fichier.nom}"/>" />
-                <span class="erreur">${form.erreurs['fichier']}</span>
+                <input type="number" id="diametre" name="diametre" value="<c:out value="${article.diametre}"/>" size="20"/>
                 <br />
                 <input type="submit" value="Valider" class="sansLabel" />
                 <br />
+                <p class="succes"><c:out value="${form.resultat}"/></p>
             </fieldset>
         </form>
     </body>
