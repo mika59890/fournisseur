@@ -13,7 +13,6 @@
 
                 <label for="email">Adresse email <span class="requis">*</span></label>
                 <input type="email" id="email" name="email" value="<c:out value="${utilisateur.email}"/>" size="20" maxlength="60" />
-
                 <span class="erreur">${form.erreurs['email']}</span>
                 <br />
 
@@ -32,11 +31,13 @@
                 <span class="erreur">${form.erreurs['nom']}</span>
                 <br />
 
-                <input type="submit" value="Valider" class="sansLabel" />
+                <input type="submit" id="envoi" value="Valider" class="sansLabel" />
                 <br />
                 
                 <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
             </fieldset>
         </form>
+        <script src="<c:url value="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="js/validation.js"/>"></script>
     </body>
 </html>
