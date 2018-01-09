@@ -4,6 +4,8 @@
         <meta charset="utf-8" />
         <title>Inscription</title>
         <link type="text/css" rel="stylesheet" href="<c:url value="css/style.css"/>" />
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/validation.js"></script>
     </head>
     <body>
     	<c:import url="inc/header.jsp"/>
@@ -37,7 +39,5 @@
                 <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
             </fieldset>
         </form>
-        <script src="<c:url value="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>"></script>
-		<script type="text/javascript" src="<c:url value="js/validation.js"/>"></script>
     </body>
 </html>

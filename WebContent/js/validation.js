@@ -6,14 +6,15 @@ $(document).ready(function(){
     	$envoi = $('#envoi');
     
     function verifConfirm(champ){
-    	if($(this).val() != $password.val()){ // si la confirmation est différente du mot de passe
-            $(this).css({ // on rend le champ rouge
-    	    borderColor : 'red',
-    	    color : 'red'
+    	if(champ.val() != ""){
+	    	if($(this).val() != $password.val()){ // si la confirmation est différente du mot de passe
+	            $(this).css({ // on rend le champ rouge
+	    	    borderColor : 'red',
+	    	    color : 'red'
             });
+    		}
         }
     }
-    
     function verifier(champ){
         if(champ.val() == ""){ // si le champ est vide
             champ.css({ // on rend le champ rouge
@@ -25,23 +26,28 @@ $(document).ready(function(){
     function verifMail(champ)
     {
        var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
-       if(!regex.test(champ.value))
-       {
-    	   champ.css({ // on rend le champ rouge
-       	    borderColor : 'red',
-       	    color : 'red'
-    	   });
-       }
+       if(champ.val() != ""){
+	       if(!regex.test(champ.value))
+	       {
+	    	   champ.css({ // on rend le champ rouge
+	       	    borderColor : 'red',
+	       	    color : 'red'
+	    	   });
+	       }
+       }    
     }
     function verifPass(champ){
-    	if($password < 4 || $password > 25){
-    		champ.css({ // on rend le champ rouge
-           	    borderColor : 'red',
-           	    color : 'red'
-        	   });
-    	}
+    	if(champ.val() != ""){
+	    	if($password < 4 || $password > 25){
+	    		champ.css({ // on rend le champ rouge
+	           	    borderColor : 'red',
+	           	    color : 'red'
+	        	   });
+	    	}
+    	}	
     }
-    $envoi.click(function(e){
+    /*Validation nouvel utilisateur*/
+    $envoi.on('click', function(e){
         e.preventDefault(); // on annule la fonction par défaut du bouton d'envoi
 
         // puis on lance la fonction de vérification sur tous les champs :
