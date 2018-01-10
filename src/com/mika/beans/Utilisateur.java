@@ -1,28 +1,45 @@
 package com.mika.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Utilisateur {
 	
-	private String nom;
-	private String email;
-	private String password;
+	private int idUtilisateur;
+	private String nomUtilisateur;
+	private String emailUtilisateur;
+	private String passwordUtilisateur;
 	
+	@Column(name = "idUtilisateur")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public int getIdUtilisateur() {
+		return idUtilisateur;
+	}
+	public void setIdUtilisateur(int idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
 	public String getNom() {
-		return nom;
+		return nomUtilisateur;
 	}
 	public void setNom(String nom) {
-		this.nom = nom;
+		this.nomUtilisateur = nom;
 	}
 	public String getEmail() {
-		return email;
+		return emailUtilisateur;
 	}
 	public void setEmail(String email) {
-		this.email = email;
+		this.emailUtilisateur = email;
 	}
 	public String getPassword() {
-		return password;
+		return passwordUtilisateur;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.passwordUtilisateur = password;
 	}
 	
 	

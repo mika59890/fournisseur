@@ -2,16 +2,16 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>fournisseurToutbois</display-name>
   <welcome-file-list>
-  	<welcome-file>connexion.java</welcome-file>
+    <welcome-file>connexion.java</welcome-file>
   </welcome-file-list>
-   <filter>
-        <filter-name>RestrictionFilter</filter-name>
-        <filter-class>com.mika.filtres.RestrictionFilter</filter-class>
-</filter>
-<filter-mapping>
-        <filter-name>RestrictionFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-</filter-mapping>
+  <filter>
+    <filter-name>RestrictionFilter</filter-name>
+    <filter-class>com.mika.filtres.RestrictionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <servlet>
     <servlet-name>Accueil</servlet-name>
     <servlet-class>com.mika.servlets.Accueil</servlet-class>
@@ -31,13 +31,6 @@
   <servlet>
     <servlet-name>NouvelArticle</servlet-name>
     <servlet-class>com.mika.servlets.NouvelArticle</servlet-class>
-    <init-param>
-		<param-name>chemin</param-name> 
-		<param-value>/fichiers/</param-value> 
-	</init-param>
-    <multipart-config>
-		<location>c:/fichiers</location>
-	</multipart-config>
   </servlet>
   <servlet-mapping>
     <servlet-name>NouvelArticle</servlet-name>
@@ -68,11 +61,11 @@
     <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>default</servlet-name>
+    <servlet-name>default</servlet-name>
     <url-pattern>/css/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>default</servlet-name>
+    <servlet-name>default</servlet-name>
     <url-pattern>/js/*</url-pattern>
   </servlet-mapping>
   <jsp-config>

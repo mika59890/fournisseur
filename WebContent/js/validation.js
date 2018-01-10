@@ -37,7 +37,7 @@ $(document).ready(function(){
     	$hauteur = $('#hauteur'),
     	$hauteurJQuery = $('#hauteurJQuery'),
     	$largeur = $('#largeur'),
-    	$largeurJQuery = $('#largeur'),
+    	$largeurJQuery = $('#largeurJQuery'),
     	$longueur = $('#longueur'),
     	$longueurJQuery = $('#longueurJQuery'),
     	$diametre = $('#diametre'),
@@ -183,46 +183,46 @@ $(document).ready(function(){
  	    	  champ.css({ // on rend le champ rouge
  	       	    borderColor : '#900',
  	       	    color : '#900'});
- 	    	   if(champ.val() == $lot){
- 	    	    	$lotJQuery.html("<span>Merci de saisir un nombre.</span>");
+ 	    	   if(champ == $lot){
+ 	    		  $lotJQuery.html("<span>Merci de saisir un nombre.</span>");
  	    	   }
- 	    	   if(champ.val() == $prixHT){
-	    	    	$prixHTQuery.html("<span>Merci de saisir un nombre.</span>");
+ 	    	   if(champ == $prixHT){
+	    	    	$prixHTJQuery.html("<span>Merci de saisir un nombre.</span>");
 	    	   }
- 	    	   if(champ.val() == $longueur){
-	    	    	$longueurQuery.html("<span>Merci de saisir un nombre.</span>");
+ 	    	   if(champ == $longueur){
+	    	    	$longueurJQuery.html("<span>Merci de saisir un nombre.</span>");
 	    	   }
- 	    	   if(champ.val() == $hauteur){
-	    	    	$hauteurQuery.html("<span>Merci de saisir un nombre.</span>");
+ 	    	   if(champ == $hauteur){
+	    	    	$hauteurJQuery.html("<span>Merci de saisir un nombre.</span>");
 	    	   }
- 	    	   if(champ.val() == $largeur){
-	    	    	$largeurQuery.html("<span>Merci de saisir un nombre.</span>");
+ 	    	   if(champ == $largeur){
+	    	    	$largeurJQuery.html("<span>Merci de saisir un nombre.</span>");
 	    	   }
- 	    	   if(champ.val() == $diametre){
- 	    		   $diametreQuery.html("<span>Merci de saisir un nombre.</span>");
+ 	    	   if(champ == $diametre){
+ 	    		   $diametreJQuery.html("<span>Merci de saisir un nombre.</span>");
     	       }
  	    	   return false;
  	       }else{
  	    	  champ.css({ 
  		    	borderColor : '#999',
  		    	color : 'black'});
- 	    	 if(champ.val() == $lot){
+ 	    	 if(champ == $lot){
 	    	    	$lotJQuery.html("");
 	    	   }
-	    	   if(champ.val() == $prixHT){
-	    	    	$prixHTQuery.html("");
+	    	   if(champ == $prixHT){
+	    	    	$prixHTJQuery.html("");
 	    	   }
-	    	   if(champ.val() == $longueur){
-	    	    	$longueurQuery.html("");
+	    	   if(champ == $longueur){
+	    	    	$longueurJQuery.html("");
 	    	   }
-	    	   if(champ.val() == $hauteur){
-	    	    	$hauteurQuery.html("");
+	    	   if(champ == $hauteur){
+	    	    	$hauteurJQuery.html("");
 	    	   }
-	    	   if(champ.val() == $largeur){
-	    	    	$largeurQuery.html("");
+	    	   if(champ == $largeur){
+	    	    	$largeurJQuery.html("");
 	    	   }
-	    	   if(champ.val() == $diametre){
-	    		   $diametreQuery.html("");
+	    	   if(champ == $diametre){
+	    		   $diametreJQuery.html("");
  	       }
  		       return true;
  	       }

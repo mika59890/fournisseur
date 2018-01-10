@@ -1,9 +1,13 @@
 package com.mika.forms;
-
+//http://www.codejava.net/frameworks/hibernate/hibernate-hello-world-tutorial-for-beginners-with-eclipse-and-mysql
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import com.mika.beans.Utilisateur;
 
@@ -24,12 +28,44 @@ public class UtilisateurForm {
     public Map<String, String> getErreurs() {
         return erreurs;
     }
+    protected SessionFactory sessionFactory;
+    
+    protected void setup() {
+    	final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+    	        .configure() // configures settings from hibernate.cfg.xml
+    	        .build();
+    	try {
+    	    sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+    	} catch (Exception ex) {
+    	    StandardServiceRegistryBuilder.destroy(registry);
+    	}
+    }
+ 
+    protected void exit() {
+        // code to close Hibernate Session factory
+    }
+ 
+    protected void create() {
+        // code to save a book
+    }
+ 
+    protected void read() {
+        // code to get a book
+    }
+ 
+    protected void update() {
+        // code to modify a book
+    }
+ 
+    protected void delete() {
+        // code to remove a book
+    }
     public Utilisateur inscrireUtilisateur( HttpServletRequest request ) {
         String email = getValeurChamp( request, CHAMP_EMAIL );
         String password = getValeurChamp( request, CHAMP_PASS );
         String confirmation = getValeurChamp( request, CHAMP_CONF );
         String nom = getValeurChamp( request, CHAMP_NOM );
-
+        
         Utilisateur utilisateur = new Utilisateur();
 
         try {
@@ -59,7 +95,7 @@ public class UtilisateurForm {
         } else {
             resultat = "Échec de l'inscription.";
         }
-
+        
         return utilisateur;
     }
     private void validationEmail( String email ) throws Exception {
