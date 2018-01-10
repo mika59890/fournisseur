@@ -28,7 +28,7 @@
                 <span class="erreur" id="confirmationJQuery">${form.erreurs['confirmation']}</span>
                 <br />
 
-                <label for="nom">Nom d'utilisateur</label>
+                <label for="nom">Nom d'utilisateur <span class="requis">*</span></label>
                 <input type="text" id="nom" name="nom" value="<c:out value="${utilisateur.nom}"/>" size="20" maxlength="20" />
                 <span class="erreur">${form.erreurs['nom']}</span>
                 <br />

@@ -41,6 +41,7 @@ public class NouveauFournisseur extends HttpServlet {
 		FournisseurForm form = new FournisseurForm();
 		Fournisseur fournisseur = form.inscrireFournisseur(request);
 		
+		request.setAttribute("form", form);
 		request.setAttribute("fournisseur", fournisseur);
 		
 		this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );

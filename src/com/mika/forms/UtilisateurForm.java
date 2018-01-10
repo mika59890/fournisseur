@@ -71,7 +71,6 @@ public class UtilisateurForm {
             throw new Exception( "Merci de saisir une adresse mail." );
         }
     }
-
     private void validationMotsDePasse( String password, String confirmation ) throws Exception {
         if ( password != null && confirmation != null ) {
             if ( !password.equals( confirmation ) ) {
