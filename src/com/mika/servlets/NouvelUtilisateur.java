@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.mika.beans.Utilisateur;
 import com.mika.forms.UtilisateurForm;
 
@@ -43,7 +42,7 @@ public class NouvelUtilisateur extends HttpServlet {
 		
         /* Appel au traitement et à la validation de la requête, et récupération du bean en résultant */
         Utilisateur utilisateur = form.inscrireUtilisateur( request );
-		
+        
         /* Stockage du formulaire et du bean dans l'objet request */
         request.setAttribute( ATT_FORM, form );
         request.setAttribute( ATT_USER, utilisateur );

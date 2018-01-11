@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -28,7 +29,7 @@ public class UtilisateurForm {
     public Map<String, String> getErreurs() {
         return erreurs;
     }
-    protected SessionFactory sessionFactory;
+protected SessionFactory sessionFactory;
     
     protected void setup() {
     	final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
@@ -42,15 +43,36 @@ public class UtilisateurForm {
     }
  
     protected void exit() {
-        // code to close Hibernate Session factory
+        sessionFactory.close();
     }
  
-    protected void create() {
-        // code to save a book
+    protected void create(String email,String password,String nom) {
+    	Utilisateur utilisateur = new Utilisateur();
+    	utilisateur.setEmailUtilisateur(email);
+    	utilisateur.setPasswordUtilisateur(password);
+    	utilisateur.setNomUtilisateur(nom);
+    	
+    	Session session = sessionFactory.openSession();
+        session.beginTransaction();
+     
+        session.save(utilisateur);
+     
+        session.getTransaction().commit();
+        session.close();
     }
  
     protected void read() {
-        // code to get a book
+    	Session session = sessionFactory.openSession();
+    	 
+        int idUtilisateur = 1;
+        Utilisateur book = session.get(Utilisateur.class, idUtilisateur);
+     
+        if(book != null){
+        System.out.println("Email: " + book.getEmailUtilisateur());
+        System.out.println("Pass: " + book.getPasswordUtilisateur());
+        System.out.println("Nom: " + book.getNomUtilisateur());
+        }
+        session.close();
     }
  
     protected void update() {
@@ -67,13 +89,17 @@ public class UtilisateurForm {
         String nom = getValeurChamp( request, CHAMP_NOM );
         
         Utilisateur utilisateur = new Utilisateur();
-
+        UtilisateurForm form = new UtilisateurForm();
+        form.setup();
+        //form.create(email,password,nom);
+        form.read();
+        form.exit();
         try {
             validationEmail( email );
         } catch ( Exception e ) {
             setErreur( CHAMP_EMAIL, e.getMessage() );
         }
-        utilisateur.setEmail( email );
+        utilisateur.setEmailUtilisateur( email );
 
         try {
             validationMotsDePasse( password, confirmation );
@@ -81,14 +107,14 @@ public class UtilisateurForm {
             setErreur( CHAMP_PASS, e.getMessage() );
             setErreur( CHAMP_CONF, null );
         }
-        utilisateur.setPassword( password );
+        utilisateur.setPasswordUtilisateur( password );
 
         try {
             validationNom( nom );
         } catch ( Exception e ) {
             setErreur( CHAMP_NOM, e.getMessage() );
         }
-        utilisateur.setNom( nom );
+        utilisateur.setNomUtilisateur( nom );
 
         if ( erreurs.isEmpty() ) {
             resultat = "Succès de l'inscription.";

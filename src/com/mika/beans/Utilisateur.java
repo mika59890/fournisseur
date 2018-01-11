@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "utilisateur")
 public class Utilisateur {
 	
 	private int idUtilisateur;
@@ -14,8 +16,8 @@ public class Utilisateur {
 	private String emailUtilisateur;
 	private String passwordUtilisateur;
 	
-	@Column(name = "idUtilisateur")
 	@Id
+	@Column(name = "idUtilisateur")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getIdUtilisateur() {
 		return idUtilisateur;
@@ -23,22 +25,22 @@ public class Utilisateur {
 	public void setIdUtilisateur(int idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
 	}
-	public String getNom() {
+	public String getNomUtilisateur() {
 		return nomUtilisateur;
 	}
-	public void setNom(String nom) {
+	public void setNomUtilisateur(String nom) {
 		this.nomUtilisateur = nom;
 	}
-	public String getEmail() {
+	public String getEmailUtilisateur() {
 		return emailUtilisateur;
 	}
-	public void setEmail(String email) {
+	public void setEmailUtilisateur(String email) {
 		this.emailUtilisateur = email;
 	}
-	public String getPassword() {
+	public String getPasswordUtilisateur() {
 		return passwordUtilisateur;
 	}
-	public void setPassword(String password) {
+	public void setPasswordUtilisateur(String password) {
 		this.passwordUtilisateur = password;
 	}
 	

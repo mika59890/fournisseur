@@ -32,7 +32,7 @@ public class ConnexionForms {
         } catch ( Exception e ) {
             setErreur( CHAMP_EMAIL, e.getMessage() );
         }
-        utilisateur.setEmail( email );
+        utilisateur.setEmailUtilisateur( email );
 
         /* Validation du champ mot de passe. */
         try {
@@ -40,7 +40,7 @@ public class ConnexionForms {
         } catch ( Exception e ) {
             setErreur( CHAMP_PASS, e.getMessage() );
         }
-        utilisateur.setPassword( password );
+        utilisateur.setPasswordUtilisateur( password );
         
         /* Initialisation du résultat global de la validation. */
         if ( erreurs.isEmpty() ) {
